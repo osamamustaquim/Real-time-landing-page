@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Reach Us</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/contactus.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+    <link rel="stylesheet"
+        href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+        integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
+    <link rel="stylesgeet"
+        href="https://rawgit.com/creativetimofficial/material-kit/master/assets/css/material-kit.css">
+</head>
+
+<body class="landing-page ">
+    <!--nav class="navbar navbar-color-on-scroll navbar-transparent    fixed-top  navbar-expand-lg " color-on-scroll="100"
+        id="sectionsNav">
+        <div class="container">
+            <div class="navbar-translate">
+                <img src="" style="height: 50px; width: 100px;" alt="company logo" />
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+    </nav-->
+
+    <div class="main main-raised">
+        <div class="container">
+
+            <div class="section text-center">
+            </div>
+            <div class="section section-contacts">
+                <div class="col">
+                    <div class="col ml-auto mr-auto">
+                        <h2 class="text-center title">Connect With Us</h2>
+                        <h4 class="text-center description">
+
+                        </h4>
+                        <form action="javascript:sendmail()" method="post" class="contact-form justify-content-center">
+
+                            <div class="col">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating" name="txtName" id="txtName">Your Name</label>
+                                    <input type="text" class="form-control" name="txtName" id="txtName" required>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating" name="txtMail" id="txtMail">Your Email</label>
+                                    <input type="email" class="form-control" name="txtMail" id="txtMail" required>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="exampleMessage" class="bmd-label-floating" name="txtMobile"
+                                        id="txtMobile">Your Phone Number</label>
+                                    <textarea type="phone" class="form-control" id="exampleMessage" name="txtMobile"
+                                        id="txtMobile" required></textarea>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <button type="submit" value="submit"
+                                    class="btn btn-primary btn-raised alert alert-success">
+                                    Send Message
+                                </button>
+                                <div class="col ml-auto mr-auto text-center">
+
+                                    <button type="reset" value="reset" class="btn btn-warning btn-raised">
+                                        Clear form
+                                    </button>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <script>
+
+        function sendmail() {
+
+            var name = $('#txtName').val();
+            var phone = $('#txtMobile').val();
+            var email = $('#txtMail').val();
+
+
+            //var message = $('#message').val();
+            //var note = $('#note').val();
+
+            // var body = $('#body').val();
+
+            var Body = '<b><u>leads Request Detail</u><br> <br><br><br><b>Name</b>: ' + name + '<br><br><b>Email</b>: ' + email + '<br><br><b>Phone Number</b>: ' + phone;
+            console.log(name, phone, email);
+
+            Email.send({
+                Host: "smtp.gmail.com",
+                Username: 'richdogpartlocator@gmail.com',
+                Password: "Forwebsite@123$",
+                To: 'abuosama838@gmail.com',
+                Bcc: 'osamamustaquim@gmail.com',
+                From: "richdogpartlocator@gmail.com",
+                Subject: "New leads Request from " + name,
+                Body: Body
+            }).then(
+                message => {
+
+                    if (message == 'OK') {
+                        window.open("http://127.0.0.1:5500/success%20message.html.html");
+                    }
+                    else {
+                        console.error(message);
+                        alert('Something Went Wrong. ')
+                    }
+                }
+            );
+        }
+    </script>
+
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"
+        integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"
+        integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
+        crossorigin="anonymous"></script>
+
+    <script src="assets/js/contacts.js"></script>
+</body>
+
+</html>
