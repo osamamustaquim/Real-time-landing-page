@@ -39,20 +39,20 @@
 
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="txtName" class="bmd-label-floating">Your Name</label>
+                                    <label class="bmd-label-floating">Your Name</label>
                                     <input type="text" class="form-control" name="txtName" id="txtName" required>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="txtMail" class="bmd-label-floating">Your Email</label>
+                                    <label class="bmd-label-floating">Your Email</label>
                                     <input type="email" class="form-control" name="txtMail" id="txtMail" required>
                                 </div>
                             </div>
 
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="txtMobile" class="bmd-label-floating">Your Phone Number</label>
+                                    <label class="bmd-label-floating">Your Phone Number</label>
                                     <textarea type="phone" class="form-control" name="txtMobile" id="txtMobile" required></textarea>
                                 </div>
                             </div>
@@ -90,7 +90,7 @@
             var phone = $('#txtMobile').val();
            // var message = $('#message').val();
 
-            var Body = '<b><u>leads Request Detail</u><br> <br><br><br><b>Name</b>: ' + name + '<br><br><b>Email</b>: ' + email + '<br><br><b>Phone Number</b>: ' + phone;
+            var Body = '<b><u>New message Detail</u><br> <br><br><br><b>Name</b>: ' + name + '<br><br><b>Email</b>: ' + email + '<br><br><b>Phone Number</b>: ' + phone;
             console.log(name, phone, email);
 
             Email.send({
