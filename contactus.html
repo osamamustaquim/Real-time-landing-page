@@ -22,22 +22,7 @@
 </head>
 
 <body class="landing-page ">
-    <!--nav class="navbar navbar-color-on-scroll navbar-transparent    fixed-top  navbar-expand-lg " color-on-scroll="100"
-        id="sectionsNav">
-        <div class="container">
-            <div class="navbar-translate">
-                <img src="" style="height: 50px; width: 100px;" alt="company logo" />
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                    <span class="navbar-toggler-icon"></span>
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-        </div>
-    </nav-->
-
+   
     <div class="main main-raised">
         <div class="container">
 
@@ -54,20 +39,20 @@
 
                             <div class="col">
                                 <div class="form-group">
-                                    <label class="bmd-label-floating" id="txtName">Your Name</label>
+                                    <label for="txtName" class="bmd-label-floating">Your Name</label>
                                     <input type="text" class="form-control" name="txtName" id="txtName" required>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group">
-                                    <label class="bmd-label-floating" id="txtMail">Your Email</label>
+                                    <label for="txtMail" class="bmd-label-floating">Your Email</label>
                                     <input type="email" class="form-control" name="txtMail" id="txtMail" required>
                                 </div>
                             </div>
 
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="exampleMessage" class="bmd-label-floating" id="txtMobile">Your Phone Number</label>
+                                    <label for="txtMobile" class="bmd-label-floating">Your Phone Number</label>
                                     <textarea type="phone" class="form-control" name="txtMobile" id="txtMobile" required></textarea>
                                 </div>
                             </div>
@@ -114,7 +99,7 @@
                 Password: "Forhosting@123$",
                 To: 'baahirkhan35@gmail.com,abuosama838@gmail.com',               
                 From: "ehost771@gmail.com",
-                Subject: "New leads Request from " + name,
+                Subject: "New Message from " + name,
                 Body: Body
             }).then(
                 message => {
