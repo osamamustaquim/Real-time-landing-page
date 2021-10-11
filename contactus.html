@@ -50,33 +50,30 @@
                         <h4 class="text-center description">
 
                         </h4>
-                        <form action="javascript:sendmail()" method="post" class="contact-form justify-content-center">
+                        <form action="javascript:sendmail()" method="post">
 
                             <div class="col">
                                 <div class="form-group">
-                                    <label class="bmd-label-floating" name="txtName" id="txtName">Your Name</label>
+                                    <label class="bmd-label-floating" id="txtName">Your Name</label>
                                     <input type="text" class="form-control" name="txtName" id="txtName" required>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group">
-                                    <label class="bmd-label-floating" name="txtMail" id="txtMail">Your Email</label>
+                                    <label class="bmd-label-floating" id="txtMail">Your Email</label>
                                     <input type="email" class="form-control" name="txtMail" id="txtMail" required>
                                 </div>
                             </div>
 
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="exampleMessage" class="bmd-label-floating" name="txtMobile"
-                                        id="txtMobile">Your Phone Number</label>
-                                    <textarea type="phone" class="form-control" id="exampleMessage" name="txtMobile"
-                                        id="txtMobile" required></textarea>
+                                    <label for="exampleMessage" class="bmd-label-floating" id="txtMobile">Your Phone Number</label>
+                                    <textarea type="phone" class="form-control" name="txtMobile" id="txtMobile" required></textarea>
                                 </div>
                             </div>
 
                             <div class="col">
-                                <button type="submit" value="submit"
-                                    class="btn btn-primary btn-raised alert alert-success">
+                                <button type="submit" value="submit" class="btn btn-primary btn-raised alert alert-success">
                                     Send Message
                                 </button>
                                 <div class="col ml-auto mr-auto text-center">
@@ -96,24 +93,17 @@
 
 
 
-
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
 
     <script>
-
         function sendmail() {
 
             var name = $('#txtName').val();
-            var phone = $('#txtMobile').val();
             var email = $('#txtMail').val();
-
-
-            //var message = $('#message').val();
-            //var note = $('#note').val();
-
-            // var body = $('#body').val();
+            var phone = $('#txtMobile').val();
+           // var message = $('#message').val();
 
             var Body = '<b><u>leads Request Detail</u><br> <br><br><br><b>Name</b>: ' + name + '<br><br><b>Email</b>: ' + email + '<br><br><b>Phone Number</b>: ' + phone;
             console.log(name, phone, email);
@@ -122,20 +112,18 @@
                 Host: "smtp.gmail.com",
                 Username: 'ehost771@gmail.com',
                 Password: "Forhosting@123$",
-                To: 'baahirkhan35@gmail.com',
-               
+                To: 'baahirkhan35@gmail.com,abuosama838@gmail.com',               
                 From: "ehost771@gmail.com",
-                Subject: "New Message from " + name,
+                Subject: "New leads Request from " + name,
                 Body: Body
             }).then(
                 message => {
 
                     if (message == 'OK') {
-                        window.open("https://osamamustaquim.github.io/Real-time-landing-page/successmessage.html");
+                        alert('Thank You For Contacting Me!');
                     }
                     else {
-                        console.error(message);
-                        alert('Something Went Wrong. ')
+                        alert('Something Went Wrong.')
                     }
                 }
             );
