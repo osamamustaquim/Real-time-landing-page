@@ -89,16 +89,11 @@
                 url:"https://docs.google.com/forms/u/0/d/e/1FAIpQLSeV89pctMDpXOeQLf5jIPvN7q33JIW_scOL_DY_cyQz2WSMJw/formResponse",
                 data:$("#submit-form").serialize(),
                 method:"post",
-                success:function (response){
-                    alert("Form submitted successfully");
-                    
-                    window.open("https://osamamustaquim.github.io/Real-time-landing-page/successmessage.html");  
-                    
+                success:function (response){                    
+                    window.open("https://osamamustaquim.github.io/Real-time-landing-page/successmessage.html");                     
                 },
-                error:function (err){
-                    alert("Form submitted successfully");
-                    window.open("https://osamamustaquim.github.io/Real-time-landing-page/successmessage.html");  
-                    
+                error:function (err){                 
+                    //window.open("https://osamamustaquim.github.io/Real-time-landing-page/successmessage.html");                      
                 }
             })
         })
