@@ -35,38 +35,33 @@
                         <h4 class="text-center description">
 
                         </h4>
-                        <form action="javascript:sendmail()" method="post" class="contact-form justify-content-center">
+                        <form id="submit-form" action="" class="contact-form justify-content-center">
 
                             <div class="col">
                                 <div class="form-group">
                                     <label class="bmd-label-floating">Your Name</label>
-                                    <input type="text" class="form-control" name="txtName" id="txtName" required>
+                                    <input type="text" class="form-control" name="entry.74557186" id="Name" required>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group">
                                     <label class="bmd-label-floating">Your Email</label>
-                                    <input type="email" class="form-control" name="txtMail" id="txtMail" required>
+                                    <input type="email" class="form-control" name="entry.1808848714" id="Mail" required>
                                 </div>
                             </div>
 
                             <div class="col">
                                 <div class="form-group">
                                     <label class="bmd-label-floating">Your Phone Number</label>
-                                    <textarea type="phone" class="form-control" name="txtMobile" id="txtMobile" required></textarea>
+                                    <textarea type="phone" class="form-control" name="entry.1096850493" id="Mobile" required></textarea>
                                 </div>
                             </div>
 
-                            <div class="col">
-                                <button type="submit" value="submit" class="btn btn-primary btn-raised alert alert-success">
-                                    Send Message
-                                </button>
+                            <div class="col">                               
                                 <div class="col ml-auto mr-auto text-center">
-
-                                    <button type="reset" value="reset" class="btn btn-warning btn-raised">
-                                        Clear form
+                                   <button type="submit" value="submit" class="btn btn-primary btn-raised alert alert-success">
+                                    Send Message
                                     </button>
-
                                 </div>
                             </div>
                         </form>
@@ -75,45 +70,6 @@
             </div>
         </div>
     </div>
-
-
-
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
-        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-
-    <script>
-        function sendmail() {
-
-            var name = $('#txtName').val();
-            var email = $('#txtMail').val();
-            var phone = $('#txtMobile').val();
-           // var message = $('#message').val();
-
-            var Body = '<b><u>New message Detail</u><br> <br><br><br><b>Name</b>: ' + name + '<br><br><b>Email</b>: ' + email + '<br><br><b>Phone Number</b>: ' + phone;
-            console.log(name, phone, email);
-
-            Email.send({
-                Host: "smtp.gmail.com",
-                Username: 'ehost771@gmail.com',
-                Password: "Forhosting@123$",
-                To: 'baahirkhan35@gmail.com,abuosama838@gmail.com',               
-                From: "ehost771@gmail.com",
-                Subject: "New Message from " + name,
-                Body: Body
-            }).then(
-                message => {
-
-                    if (message == 'OK') {
-                        window.open("https://osamamustaquim.github.io/Real-time-landing-page/successmessage.html");
-                    }
-                    else {
-                        alert('Something Went Wrong.')
-                    }
-                }
-            );
-        }
-    </script>
 
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -125,6 +81,29 @@
         crossorigin="anonymous"></script>
 
     <script src="assets/js/contacts.js"></script>
+    
+    <script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://docs.google.com/forms/u/0/d/e/1FAIpQLSeV89pctMDpXOeQLf5jIPvN7q33JIW_scOL_DY_cyQz2WSMJw/formResponse",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Form submitted successfully");
+                    
+                    window.location.aassign("https://osamamustaquim.github.io/Real-time-landing-page/successmessage.html");  
+                    document.getElementById('submit-form').reset();
+                },
+                error:function (err){
+                    alert("Form submitted successfully");
+                    document.getElementById('submit-form').reset();   
+                }
+            })
+        })
+    </script>
+    
+    
 </body>
 
 </html>
